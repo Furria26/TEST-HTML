@@ -6,7 +6,7 @@
     <title>Portfolio - Robbie Lens Photographie</title>
     <link href="style/style.css" rel="stylesheet" />
     <link href="style/portfolio.css" rel="stylesheet" />
-    <link href="portfolio.js" rel="script"/>
+    <link href="portfolio.js" rel="script" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
@@ -29,42 +29,42 @@
         </section>
         <section class="portfolio-section-photos">
             <h2>Paysages</h2>
-    
+
             <div class="grid-paysages" id="grid-paysages"></div>
             <h2>Portraits</h2>
             <div class="grid-portraits" id="grid-portraits"></div>
 
-            <script>   
-                var paysages = ["paysage1.jpg", "paysage2.jpg","paysage3.jpg","paysage4.jpg","paysage5.jpg","paysage6.jpg","paysage7.jpg","paysage8.jpg","paysage9.jpg"]
+            <script>
+                var paysages = ["paysage1.jpg", "paysage2.jpg", "paysage3.jpg", "paysage4.jpg", "paysage5.jpg", "paysage6.jpg", "paysage7.jpg", "paysage8.jpg", "paysage9.jpg"]
                 var portraits = ["portrait1.jpg", "portrait2.jpg", "portrait3.jpg", "portrait4.jpg", "portrait5.jpg", "portrait6.jpg"]
-        
-                function createImage(imageName) { 
+
+                function createImage(imageName) {
                     var link = document.createElement('\a')
                     link.href = imageName
                     link.className = "lien-conteneur-photo"
-        
-                    var img = document.createElement('img'); 
-                    img.src = imageName; 
+
+                    var img = document.createElement('img');
+                    img.src = imageName;
                     link.appendChild(img);
-        
-                    var div = document.createElement('div'); 
+
+                    var div = document.createElement('div');
                     div.className = "photo-hover"
-                    var content = "Voir la photo"
+                    var content = document.createTextNode("Voir  la photo")
                     div.appendChild(content)
                     link.appendChild(div)
-        
+
                     return link
-                } 
-        
+                }
+
                 function createPaysages() {
-                    for(i=0; i < paysages.length; i++) {
+                    for (i = 0; i < paysages.length; i++) {
                         var imageName = "images/portfolio/" + paysages[i]
-                        document.getElementById('grid-paysages').appendChild(createImage(imageName));  
+                        document.getElementById('grid-paysages').appendChild(createImage(imageName));
                     }
-                }    
-                
+                }
+
                 function createPortraits() {
-                    for(i=0; i < portraits.length; i++) {
+                    for (i = 0; i < portraits.length; i++) {
                         var imageName = "images/portfolio/" + portraits[i]
                         document.getElementById('grid-portraits').appendChild(createImage(imageName));
                     }
